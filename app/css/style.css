@@ -1,0 +1,63 @@
+@import "global-styles.css";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 60px;
+
+  background-color: var(--bg-color);
+  border-bottom: 1px solid var(--border-color);
+  border-top: 1px solid var(--border-color);
+  padding: 10px;
+}
+
+.navigation__members {
+  background: palegoldenrod;
+  list-style: none;
+  display: flex;
+  gap: 10px;
+}
+
+.navigation__member {
+  background: palegreen;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.navigation,
+.navigation__members,
+.navigation a,
+.navigation__member button {
+  height: 100%;
+}
+
+.navigation__member button {
+  padding: 0 15px;
+}
+
+.navigation__member button:hover {
+  cursor: pointer;
+}
+
+.main {
+  height: calc(100vh - 100px);
+  padding: 10px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 40px;
+
+  background-color: var(--bg-color);
+  border-top: 1px solid var(--border-color);
+  padding: 0 30px;
+}

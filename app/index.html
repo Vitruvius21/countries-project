@@ -5,33 +5,83 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>World Countries</title>
-    <link rel="stylesheet" href="global-styles.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <header class="header">
       <h1>World Countries</h1>
       <nav class="navigation">
         <ul class="navigation__members">
-          <li class="navigation__member"><button>Home</button></li>
           <li class="navigation__member">
-            <button>All</button>
+            <a href="index.html"><button>Home</button></a>
           </li>
-          <li class="navigation__member"><button>Africa</button></li>
-          <li class="navigation__member"><button>America</button></li>
-          <li class="navigation__member"><button>Asia</button></li>
-          <li class="navigation__member"><button>Europe</button></li>
-          <li class="navigation__member"><button>Oceania</button></li>
+          <li class="navigation__member">
+            <a href="html/all-countries.html"><button>All</button></a>
+          </li>
+          <li class="navigation__member">
+            <a href="html/africa.html"><button>Africa</button></a>
+          </li>
+          <li class="navigation__member">
+            <a href="html/america.html"><button>America</button></a>
+          </li>
+          <li class="navigation__member">
+            <a href="html/asia.html"><button>Asia</button></a>
+          </li>
+          <li class="navigation__member">
+            <a href="html/europe.html"><button>Europe</button></a>
+          </li>
+          <li class="navigation__member">
+            <a href="html/oceania.html"><button>Oceania</button></a>
+          </li>
         </ul>
       </nav>
       <div class="theme__container">
-        <button>Dark Mode</button>
+        <button class="btn-toggle">Dark Mode</button>
       </div>
     </header>
-    <main></main>
+    <main class="main">
+      <!-- <section class="section">
+        <div class="section__container">
+          <h2 class="section__title">
+            <?php echo $country['name']; ?>
+          </h2>
+          <div class="section__content">
+            <div class="section__content__image">
+              <img
+                src="<?php echo $country['flag']; ?>"
+                alt="<?php echo $country['name']; ?> flag"
+              />
+            </div>
+            <div class="section__content__text">
+              <p>
+                <strong>Native Name:</strong>
+                <?php echo $country['nativeName']; ?>
+              </p>
+              <p>
+                <strong>Population:</strong>
+                <?php echo $country['population']; ?>
+              </p>
+              <p>
+                <strong>Region:</strong>
+                <?php echo $country['region']; ?>
+              </p>
+              <p>
+                <strong>Sub Region:</strong>
+                <?php echo $country['subregion']; ?>
+              </p>
+              <p>
+                <strong>Capital:</strong>
+                <?php echo $country['capital']; ?>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section> -->
+    </main>
     <footer class="footer">
       <p>Giorgi Balakhadze</p>
-      <p>&copy; 2020</p>
+      <p>&copy; 2022</p>
     </footer>
+    <script src="js/theme.js"></script>
   </body>
 </html>
