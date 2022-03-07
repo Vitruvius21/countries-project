@@ -1,3 +1,5 @@
+@import "buttons.css";
+
 * {
   margin: 0;
   padding: 0;
@@ -5,32 +7,94 @@
 }
 
 body {
+  /** BACKGROUND VARIALBES */
   --bg-color: #f5f5f5;
   --bg-color-lighter: #ffffff;
+
+  /** BUTTON VARIALBES */
+  --btn-txt-color: #7a7a76;
+  --btn-txt-color-active: #007bff;
+  --btn-border-color: #e5e5e5;
+  --btn-bg-color-main: #f8f9fa;
+  --btn-bg-color-main-active: #e8f1fb;
+
+  /** TEXT VARIALBES */
+  --text-color-primery: #4791db;
+  --text-color-secondary: #505050;
+  --main-font: "Roboto", "Helvetica", "Arial", sans-serif;
+
+  /** OTHER VARIALBES */
   --border-color: #e5e5e5;
-  --text-color: black;
+  --box-shadow: 0px 0px 1px -20px rgb(0 0 0 / 12%),
+    0px 2px 2px 0px rgb(0 0 0 / 10%), 0px 1px 5px 0px rgb(0 0 0 / 8%);
+  --box-shadow-hover: 0px 2px 4px -1px rgb(0 0 0 / 20%),
+    0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
+  --box-shadow-active: 0px 5px 5px -3px rgb(0 0 0 / 20%),
+    0px 8px 10px 1px rgb(0 0 0 / 14%), 0px 3px 14px 2px rgb(0 0 0 / 12%);
+  --transition-time: 0.3s;
+  --transition-effect: "ease-in-out";
 }
 
 body.dark-theme {
-  --bg-color: hsl(0, 0%, 26%);
-  --bg-color-lighter: hsl(0, 0%, 36%);
-  --border-color: hsl(0, 0%, 20%);
-  --text-color: rgb(214, 214, 214);
+  /** BACKGROUND VARIALBES */
+  --bg-color: #424242;
+  --bg-color-lighter: #5c5c5c;
+
+  /** BUTTON VARIALBES */
+  --btn-txt-color: #d6d6d6;
+  --btn-txt-color-active: hsl(0, 0%, 94%);
+  --btn-border-color: #333333;
+  --btn-bg-color-main: #5c5c5c;
+  --btn-bg-color-main-active: hsl(0, 0%, 46%);
+
+  /** TEXT VARIALBES */
+  --text-color-secondary: #d6d6d6;
+
+  /** OTHER VARIALBES */
+  --border-color: #333333;
 }
 
 @media (prefers-color-scheme: dark) {
   body {
-    --bg-color: hsl(0, 0%, 26%);
-    --bg-color-lighter: hsl(0, 0%, 36%);
-    --border-color: hsl(0, 0%, 20%);
-    --text-color: rgb(214, 214, 214);
+    /** BACKGROUND VARIALBES */
+    --bg-color: #424242;
+    --bg-color-lighter: #5c5c5c;
+
+    /** BUTTON VARIALBES */
+    --btn-txt-color: #d6d6d6;
+    --btn-txt-color-active: hsl(0, 0%, 94%);
+    --btn-border-color: #333333;
+    --btn-bg-color-main: #5c5c5c;
+    --btn-bg-color-main-active: hsl(0, 0%, 46%);
+
+    /** TEXT VARIALBES */
+    --text-color-secondary: #d6d6d6;
+
+    /** OTHER VARIALBES */
+    --border-color: #333333;
   }
 
   body.light-theme {
+    /** BACKGROUND VARIALBES */
     --bg-color: #f5f5f5;
     --bg-color-lighter: #ffffff;
+
+    /** BUTTON VARIALBES */
+    --btn-txt-color: #7a7a76;
+    --btn-txt-color-active: #007bff;
+    --btn-border-color: #e5e5e5;
+    --btn-bg-color-main: #f8f9fa;
+    --btn-bg-color-main-active: #e8f1fb;
+
+    /** TEXT VARIALBES */
+    --text-color-primery: #4791db;
+    --text-color-secondary: #505050;
+    --main-font: "Roboto", "Helvetica", "Arial", sans-serif;
+
+    /** OTHER VARIALBES */
     --border-color: #e5e5e5;
-    --text-color: black;
+    --box-shadow: 0px 0px 1px -20px rgb(0 0 0 / 12%),
+      0px 2px 2px 0px rgb(0 0 0 / 10%), 0px 1px 5px 0px rgb(0 0 0 / 8%);
   }
 }
 
@@ -40,9 +104,17 @@ body.dark-theme img {
 
 body {
   background: var(--bg-color-lighter);
+  transition: background var(--transition-time) ease-in-out;
 }
 
 h1,
 p {
-  color: var(--text-color);
+  color: var(--text-color-secondary);
+  transition: color var(--transition-time) ease-in-out;
+  font-family: var(--main-font);
+}
+
+h1 {
+  letter-spacing: 0.02857em;
+  text-transform: uppercase;
 }
