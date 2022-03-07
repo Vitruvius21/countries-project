@@ -4,63 +4,81 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>World Countries</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <title>World Countries List</title>
+    <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
     <header class="header">
-      <h1 class="header__h1">World Countries</h1>
-      <div class="theme__btn-container">
-        <button class="btn-toggle"></button>
-      </div>
-
+      <h1 class="header__h1">World Countries: List</h1>
       <nav class="navigation">
         <ul class="navigation__members">
           <li class="navigation__member">
-            <a href="index.html"
-              ><button class="navigation__btn">Home</button></a
+            <a href="../index.html"><button>Home</button></a>
+          </li>
+          <li class="navigation__member">
+            <a href="./all-countries.html"
+              ><button class="navigation__active-btn">All</button></a
             >
           </li>
           <li class="navigation__member">
-            <a href="pages/all-countries.html"
-              ><button class="navigation__btn">All</button></a
-            >
+            <a href="./africa.html"><button>Africa</button></a>
           </li>
           <li class="navigation__member">
-            <a href="pages/africa.html"
-              ><button class="navigation__btn">Africa</button></a
-            >
+            <a href="./america.html"><button>America</button></a>
           </li>
           <li class="navigation__member">
-            <a href="pages/america.html"
-              ><button class="navigation__btn">America</button></a
-            >
+            <a href="./asia.html"><button>Asia</button></a>
           </li>
           <li class="navigation__member">
-            <a href="pages/asia.html"
-              ><button class="navigation__btn">Asia</button></a
-            >
+            <a href="./europe.html"><button>Europe</button></a>
           </li>
           <li class="navigation__member">
-            <a href="pages/europe.html"
-              ><button class="navigation__btn">Europe</button></a
-            >
-          </li>
-          <li class="navigation__member">
-            <a href="pages/oceania.html"
-              ><button class="navigation__btn">Oceania</button></a
-            >
+            <a href="./oceania.html"><button>Oceania</button></a>
           </li>
         </ul>
       </nav>
+      <div class="theme__container">
+        <button class="btn-toggle">Dark Mode</button>
+      </div>
     </header>
     <main class="main">
-      <section class="main__section">
-        <div class="main__section-card">
-          <h4 class="main__section-card-heading"></h4>
-          <img class="main__section-card-img" src="" alt="" />
-          <p class="main__section-card-text"></p>
+      <section>
+        <div id="demo">
+          <h2>Let AJAX change this text</h2>
+          <button type="button" onclick="loadDoc('france')">
+            Call For Georgia
+          </button>
         </div>
+        <!-- <div>
+          <div class="mapouter">
+            <div class="gmap_canvas">
+              <iframe
+                width="756"
+                height="459"
+                id="gmap_canvas"
+                src="https://upload.wikimedia.org/wikipedia/commons/3/39/Simpleicons_Places_map-with-placeholder.svg"
+              ></iframe>
+              <br />
+
+              <style>
+                .mapouter {
+                  position: relative;
+                  text-align: right;
+                  height: 459px;
+                  width: 756px;
+                }
+              </style>
+              <style>
+                .gmap_canvas {
+                  overflow: hidden;
+                  background: none !important;
+                  height: 459px;
+                  width: 756px;
+                }
+              </style>
+            </div>
+          </div>
+        </div> -->
       </section>
       <!-- <section class="section">
         <div class="section__container">
@@ -102,8 +120,8 @@
     </main>
     <footer class="footer">
       <p>Giorgi Balakhadze</p>
-      <p><span class="footer__copy-left">&copy;</span> Copyleft 2022</p>
+      <p>&copy; 2022</p>
     </footer>
-    <script type="module" src="js/app.js"></script>
+    <script type="module" src="../js/app.js"></script>
   </body>
 </html>
