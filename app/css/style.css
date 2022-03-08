@@ -20,6 +20,7 @@
   top: 15px;
   vertical-align: center;
   color: var(--text-color-primery);
+  user-select: none;
 }
 
 .navigation {
@@ -74,7 +75,8 @@
   align-items: center;
 
   box-shadow: var(--box-shadow);
-  transition: background var(--transition-time) ease-in-out;
+  transition: background var(--transition-time),
+    box-shadow var(--transition-time) ease-in-out;
 }
 
 .theme__btn-container:hover {
@@ -91,13 +93,16 @@
   position: relative;
   width: 24px;
   height: 24px;
-  background-image: url(../assets/moon.svg);
   background-size: cover;
   background-position: center;
 }
 
-.btn-toggle-dark {
+.btn-toggle.btn-toggle-dark {
   background-image: url(../assets/sun.svg);
+}
+
+.btn-toggle.btn-toggle-light {
+  background-image: url(../assets/moon.svg);
 }
 
 .main {
