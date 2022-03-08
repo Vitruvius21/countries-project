@@ -1,5 +1,6 @@
 @import "global-styles.css";
 
+/** PAGE HEADER START  */
 .header {
   position: relative;
   height: 70px;
@@ -19,7 +20,7 @@
   position: absolute;
   top: 15px;
   vertical-align: center;
-  color: var(--text-color-primery);
+  color: var(--text-color-primary);
   user-select: none;
 }
 
@@ -104,10 +105,18 @@
 .btn-toggle.btn-toggle-light {
   background-image: url(../assets/moon.svg);
 }
+/** PAGE HEADER END */
 
 .main {
   height: calc(100vh - 110px);
   padding: 10px;
+}
+
+.loader-img {
+  width: 100px;
+  height: 100px;
+  /* filter equivalent of hex color #ff0000 */
+  filter: var(--filter-color);
 }
 
 .footer {

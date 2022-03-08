@@ -3,8 +3,8 @@ export function defineTheme() {
   const btnIcon = document.querySelector(".btn-toggle");
 
   const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-
   const currentTheme = localStorage.getItem("theme");
+
   if (currentTheme == "dark") {
     btnIcon.classList.add("btn-toggle-dark");
     document.body.classList.toggle("dark-theme");
@@ -20,6 +20,7 @@ export function defineTheme() {
     btnIcon.classList.toggle("btn-toggle-light");
 
     if (prefersDarkScheme && prefersDarkScheme?.matches) {
+      document.body.classList.toggle("dark-theme");
       document.body.classList.toggle("light-theme");
       theme = document.body.classList.contains("light-theme")
         ? "light"

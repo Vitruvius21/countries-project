@@ -10,6 +10,9 @@
   <body>
     <header class="header">
       <h1 class="header__h1">World Countries: List</h1>
+      <div class="theme__btn-container">
+        <button class="btn-toggle"></button>
+      </div>
       <nav class="navigation">
         <ul class="navigation__members">
           <li class="navigation__member">
@@ -37,9 +40,6 @@
           </li>
         </ul>
       </nav>
-      <div class="theme__container">
-        <button class="btn-toggle">Dark Mode</button>
-      </div>
     </header>
     <main class="main">
       <section>
@@ -80,48 +80,11 @@
           </div>
         </div> -->
       </section>
-      <!-- <section class="section">
-        <div class="section__container">
-          <h2 class="section__title">
-            <?php echo $country['name']; ?>
-          </h2>
-          <div class="section__content">
-            <div class="section__content__image">
-              <img
-                src="<?php echo $country['flag']; ?>"
-                alt="<?php echo $country['name']; ?> flag"
-              />
-            </div>
-            <div class="section__content__text">
-              <p>
-                <strong>Native Name:</strong>
-                <?php echo $country['nativeName']; ?>
-              </p>
-              <p>
-                <strong>Population:</strong>
-                <?php echo $country['population']; ?>
-              </p>
-              <p>
-                <strong>Region:</strong>
-                <?php echo $country['region']; ?>
-              </p>
-              <p>
-                <strong>Sub Region:</strong>
-                <?php echo $country['subregion']; ?>
-              </p>
-              <p>
-                <strong>Capital:</strong>
-                <?php echo $country['capital']; ?>
-              </p>
-            </div>
-          </div>
-        </div>
-      </section> -->
     </main>
     <footer class="footer">
       <p>Giorgi Balakhadze</p>
       <p>&copy; 2022</p>
     </footer>
-    <script type="module" src="../js/app.js"></script>
+    <script type="module" src="../js/allCountries.js"></script>
   </body>
 </html>
