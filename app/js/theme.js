@@ -13,15 +13,20 @@ export function defineTheme() {
     document.body.classList.toggle("light-theme");
   }
 
+  if (prefersDarkScheme && prefersDarkScheme?.matches) {
+    btnIcon.classList.add("btn-toggle-dark");
+  }
+
   btn.addEventListener("click", function () {
     let theme;
 
-    btnIcon.classList.toggle("btn-toggle-dark");
+    btnIcon.classList.add("btn-toggle-dark");
     btnIcon.classList.toggle("btn-toggle-light");
 
     if (prefersDarkScheme && prefersDarkScheme?.matches) {
-      document.body.classList.toggle("dark-theme");
+      document.body.classList.remove("dark-theme");
       document.body.classList.toggle("light-theme");
+
       theme = document.body.classList.contains("light-theme")
         ? "light"
         : "dark";

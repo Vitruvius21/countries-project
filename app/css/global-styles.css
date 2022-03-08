@@ -58,6 +58,10 @@ body.dark-theme {
     brightness(91%) contrast(89%);
 }
 
+body.dark-theme img:not(.loader-img) {
+  filter: brightness(0.8) contrast(1.2);
+}
+
 /** IF prefers-color-scheme IS DARK body DEFAULT IS DARK-MODE */
 @media (prefers-color-scheme: dark) {
   body {
@@ -105,10 +109,10 @@ body.dark-theme {
     --filter-color: invert(52%) sepia(12%) saturate(103%) hue-rotate(22deg)
       brightness(89%) contrast(81%);
   }
-}
 
-body.dark-theme img:not(.loader-img) {
-  filter: brightness(0.8) contrast(1.2);
+  body:not(.light-theme) img:not(.loader-img) {
+    filter: brightness(0.8) contrast(1.2);
+  }
 }
 
 body {
