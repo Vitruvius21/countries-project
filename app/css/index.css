@@ -20,7 +20,7 @@
   border-radius: 10px;
   background: var(--bg-color);
   box-shadow: var(--box-shadow);
-  transition: background var(--transition-time),
+  transition: background var(--transition-time), border var(--transition-time),
     box-shadow var(--transition-time) ease-in-out;
 
   padding: 10px 30px;
