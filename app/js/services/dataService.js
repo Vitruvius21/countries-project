@@ -21,7 +21,11 @@ function getData({ countryName } = {}) {
 
     xhttp.onload = function () {
       if (this.status >= 200 && this.status < 300) {
-        resolve(JSON.parse(xhttp.response));
+        resolve(
+          JSON.parse(xhttp.response).filter((country) => {
+            return country?.unMember;
+          })
+        );
       } else {
         reject({
           status: this.status,

@@ -42,6 +42,7 @@
   height: 300px;
   width: auto;
   max-width: 638px;
+  user-select: none;
   border-radius: 2px;
 }
 

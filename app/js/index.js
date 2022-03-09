@@ -1,15 +1,14 @@
 import * as theme from "./theme.js";
 import * as dataService from "./services/dataService.js";
-import * as utils from "./utils/utils.js";
+import { getRndInteger, createDescription } from "./utils/utils.js";
 
 theme.defineTheme();
 
 window.onload = async function () {
   const allCountries = await dataService.getAllCountries();
-  const sovereigCountries = allCountries.filter((country) => {
-    return country?.unMember;
-  });
-  console.log("data", sovereigCountries);
+
+  let rndCountry;
+  console.log("data", allCountries);
 
   const loaderImg = document.querySelector(".loader-img");
   const card = document.querySelector(".main__section-card");
@@ -25,8 +24,8 @@ window.onload = async function () {
   cardText.className = "main__section-card-text";
 
   function updateCardData() {
-    let rndIndex = utils.getRndInteger({ max: sovereigCountries.length });
-    let rndCountry = sovereigCountries[rndIndex];
+    const rndIndex = getRndInteger({ max: allCountries.length });
+    rndCountry = allCountries[rndIndex];
 
     console.log(rndIndex);
 
@@ -34,17 +33,7 @@ window.onload = async function () {
     cardImg.src = rndCountry?.flags?.svg;
     cardImg.alt = `${rndCountry?.name?.common} flag`;
 
-    cardText.innerHTML = `${
-      rndCountry?.name?.common
-    } is the UN member country in ${
-      rndCountry?.continents?.[0]
-    }, with the capital city in ${
-      rndCountry?.capital?.[0]
-    }. The country has a territory of  ${utils.transformNumber(
-      rndCountry?.area
-    )} km² and a population of ${utils.transformNumber(
-      rndCountry?.population
-    )} people.`;
+    cardText.innerHTML = createDescription(rndCountry);
 
     imgContainer.append(cardImg);
     card.append(cardTitle, imgContainer, cardText);
@@ -54,4 +43,15 @@ window.onload = async function () {
   randomiseBtn.addEventListener("click", updateCardData);
 
   updateCardData();
+
+  //* Navigation
+  function navigate() {
+    const addr = new URL(window.location.origin);
+    addr.pathname = "pages/profile.html";
+    addr.searchParams.set("country", rndCountry.name.common);
+
+    window.location.assign(addr);
+  }
+
+  card.addEventListener("click", navigate);
 };
