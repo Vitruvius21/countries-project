@@ -13,10 +13,10 @@ body {
   --bg-color-lighter: #ffffff;
 
   /** BUTTON VARIALBES */
-  --btn-txt-color: #7a7a76;
+  --btn-txt-color: #72726e;
   --btn-txt-color-active: #007bff;
-  --btn-txt-color-secondary: #e6e6e6;
-  --btn-txt-color-secondary-active: #e6e6e6;
+  --btn-txt-color-secondary: #f2f2f2;
+  --btn-txt-color-secondary-active: #f2f2f2;
   --btn-border-color: #e5e5e5;
   --btn-bg-color-main: #f8f9fa;
   --btn-bg-color-main-active: #e8f1fb;
@@ -105,10 +105,10 @@ body.dark-theme img:not(.loader-img) {
     --bg-color-lighter: #ffffff;
 
     /** BUTTON VARIALBES */
-    --btn-txt-color: #7a7a76;
+    --btn-txt-color: #72726e;
     --btn-txt-color-active: #007bff;
-    --btn-txt-color-secondary: #e6e6e6;
-    --btn-txt-color-secondary-active: #e6e6e6;
+    --btn-txt-color-secondary: #f2f2f2;
+    --btn-txt-color-secondary-active: #f2f2f2;
     --btn-border-color: #e5e5e5;
     --btn-bg-color-main: #f8f9fa;
     --btn-bg-color-main-active: #e8f1fb;

@@ -108,6 +108,32 @@
   filter: var(--filter-color);
 }
 
+.shadow {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+
+  -moz-box-shadow: rgba(0, 0, 0, 0.5) 2px 2px 7px inset;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 2px 2px 7px inset;
+  box-shadow: rgba(0, 0, 0, 0.5) 2px 2px 7px inset;
+  -webkit-transition: box-shadow 0.3s ease-in;
+  -moz-transition: box-shadow 0.3s ease-in;
+  transition: box-shadow 0.3s ease-in;
+}
+
+/* .shadow:hover {
+  -moz-box-shadow: rgba(0, 0, 0, 0.5) 4px 4px 14px inset;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 4px 4px 14px inset;
+  box-shadow: rgba(0, 0, 0, 0.5) 4px 4px 14px inset;
+} */
+
+.shadow img {
+  max-width: 100%;
+  position: relative;
+  z-index: -1;
+}
+
 .footer {
   display: flex;
   justify-content: space-between;
