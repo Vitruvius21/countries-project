@@ -14,11 +14,13 @@ window.onload = async function () {
   const loaderImg = document.querySelector(".loader-img");
   const card = document.querySelector(".main__section-card");
   const cardTitle = document.createElement("h4");
+  const imgContainer = document.createElement("div");
   const cardImg = document.createElement("img");
   const cardText = document.createElement("p");
 
   loaderImg.setAttribute("style", "display:none");
   cardTitle.className = "main__section-card-heading";
+  imgContainer.className = "shadow";
   cardImg.className = "main__section-card-img";
   cardText.className = "main__section-card-text";
 
@@ -31,6 +33,7 @@ window.onload = async function () {
     cardTitle.innerHTML = rndCountry?.name?.common;
     cardImg.src = rndCountry?.flags?.svg;
     cardImg.alt = `${rndCountry?.name?.common} flag`;
+
     cardText.innerHTML = `${
       rndCountry?.name?.common
     } is the UN member country in ${
@@ -43,7 +46,8 @@ window.onload = async function () {
       rndCountry?.population
     )} people.`;
 
-    card.append(cardTitle, cardImg, cardText);
+    imgContainer.append(cardImg);
+    card.append(cardTitle, imgContainer, cardText);
   }
 
   const randomiseBtn = document.getElementById("rand");

@@ -13,14 +13,18 @@ body {
   --bg-color-lighter: #ffffff;
 
   /** BUTTON VARIALBES */
-  --btn-txt-color: #7a7a76;
+  --btn-txt-color: #72726e;
   --btn-txt-color-active: #007bff;
+  --btn-txt-color-secondary: #f2f2f2;
+  --btn-txt-color-secondary-active: #f2f2f2;
   --btn-border-color: #e5e5e5;
   --btn-bg-color-main: #f8f9fa;
   --btn-bg-color-main-active: #e8f1fb;
+  --btn-bg-color-secondary: #1976d2;
+  --btn-bg-color-secondary-active: #1e88e5;
 
   /** TEXT VARIALBES */
-  --text-color-primary: #4791db;
+  --text-color-primary: #3e8cda;
   --text-color-secondary: #505050;
   --main-font: "Roboto", "Helvetica", "Arial", sans-serif;
 
@@ -44,10 +48,14 @@ body.dark-theme {
 
   /** BUTTON VARIALBES */
   --btn-txt-color: #d6d6d6;
-  --btn-txt-color-active: hsl(0, 0%, 94%);
+  --btn-txt-color-active: #f0f0f0;
+  --btn-txt-color-secondary: #343434;
+  --btn-txt-color-secondary-active: #343434;
   --btn-border-color: #333333;
   --btn-bg-color-main: #5c5c5c;
-  --btn-bg-color-main-active: hsl(0, 0%, 46%);
+  --btn-bg-color-main-active: #757575;
+  --btn-bg-color-secondary: #64b5f6;
+  --btn-bg-color-secondary-active: #90caf9;
 
   /** TEXT VARIALBES */
   --text-color-secondary: #d6d6d6;
@@ -71,13 +79,19 @@ body.dark-theme img:not(.loader-img) {
 
     /** BUTTON VARIALBES */
     --btn-txt-color: #d6d6d6;
-    --btn-txt-color-active: hsl(0, 0%, 94%);
+    --btn-txt-color-active: #f0f0f0;
+    --btn-txt-color-secondary: #343434;
+    --btn-txt-color-secondary-active: #343434;
     --btn-border-color: #333333;
     --btn-bg-color-main: #5c5c5c;
-    --btn-bg-color-main-active: hsl(0, 0%, 46%);
+    --btn-bg-color-main-active: #757575;
+    --btn-bg-color-secondary: #64b5f6;
+    --btn-bg-color-secondary-active: #90caf9;
 
-    /** TEXT VARIALBES */
+    /** TEXT VARIALBES  */
+    --text-color-primary: #80b7e3;
     --text-color-secondary: #d6d6d6;
+    --main-font: "Roboto", "Helvetica", "Arial", sans-serif;
 
     /** OTHER VARIALBES */
     --border-color: #333333;
@@ -91,16 +105,19 @@ body.dark-theme img:not(.loader-img) {
     --bg-color-lighter: #ffffff;
 
     /** BUTTON VARIALBES */
-    --btn-txt-color: #7a7a76;
+    --btn-txt-color: #72726e;
     --btn-txt-color-active: #007bff;
+    --btn-txt-color-secondary: #f2f2f2;
+    --btn-txt-color-secondary-active: #f2f2f2;
     --btn-border-color: #e5e5e5;
     --btn-bg-color-main: #f8f9fa;
     --btn-bg-color-main-active: #e8f1fb;
+    --btn-bg-color-secondary: #1976d2;
+    --btn-bg-color-secondary-active: #1e88e5;
 
     /** TEXT VARIALBES */
-    --text-color-primary: #4791db;
+    --text-color-primary: #3e8cda;
     --text-color-secondary: #505050;
-    --main-font: "Roboto", "Helvetica", "Arial", sans-serif;
 
     /** OTHER VARIALBES */
     --border-color: #e5e5e5;

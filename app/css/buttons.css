@@ -28,4 +28,17 @@
 }
 
 .action-btn {
+  color: var(--btn-txt-color-secondary);
+  background: var(--btn-bg-color-secondary);
+  padding: 10px 16px;
+}
+
+.action-btn:hover {
+  box-shadow: var(--box-shadow-hover);
+}
+
+.action-btn:active {
+  /* color: var(--btn-txt-color-secondary-active); */
+  box-shadow: var(--box-shadow-active);
+  background: var(--btn-bg-color-secondary-active);
 }
