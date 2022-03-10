@@ -6,22 +6,22 @@ export function defineTheme() {
   const currentTheme = localStorage.getItem("theme");
 
   if (currentTheme == "dark") {
-    btnIcon.classList.add("btn-toggle-dark");
+    btnIcon?.classList.add("btn-toggle-dark");
     document.body.classList.toggle("dark-theme");
   } else if (currentTheme == "light") {
-    btnIcon.classList.add("btn-toggle-light");
+    btnIcon?.classList.add("btn-toggle-light");
     document.body.classList.toggle("light-theme");
   }
 
   if (prefersDarkScheme && prefersDarkScheme?.matches) {
-    btnIcon.classList.add("btn-toggle-dark");
+    btnIcon?.classList.add("btn-toggle-dark");
   }
 
-  btn.addEventListener("click", function () {
+  btn?.addEventListener("click", function () {
     let theme;
 
-    btnIcon.classList.add("btn-toggle-dark");
-    btnIcon.classList.toggle("btn-toggle-light");
+    btnIcon?.classList.add("btn-toggle-dark");
+    btnIcon?.classList.toggle("btn-toggle-light");
 
     if (prefersDarkScheme && prefersDarkScheme?.matches) {
       document.body.classList.remove("dark-theme");

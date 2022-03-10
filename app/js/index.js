@@ -12,7 +12,7 @@ window.onload = async function () {
 
   const loaderImg = document.querySelector(".loader-img");
   const card = document.querySelector(".main__section-card");
-  const cardTitle = document.createElement("h4");
+  const cardTitle = document.createElement("h2");
   const imgContainer = document.createElement("div");
   const cardImg = document.createElement("img");
   const cardText = document.createElement("p");

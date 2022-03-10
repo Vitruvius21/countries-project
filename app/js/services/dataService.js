@@ -7,16 +7,16 @@
 //     return "7";
 //   }
 // }
-const ENDPOINT = "https://restcountries.com/v3.1";
+const URL = "https://restcountries.com/v3.1";
 
 function getData({ countryName } = {}) {
   return new Promise(function (resolve, reject) {
     const xhttp = new XMLHttpRequest();
 
     if (countryName) {
-      xhttp.open("GET", `${ENDPOINT}/name/${countryName}`);
+      xhttp.open("GET", `${URL}/name/${countryName}`);
     } else {
-      xhttp.open("GET", `${ENDPOINT}/all`);
+      xhttp.open("GET", `${URL}/all`);
     }
 
     xhttp.onload = function () {
