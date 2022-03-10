@@ -8,7 +8,7 @@
   background: var(--bg-color);
   border-bottom: 1px solid var(--border-color);
   padding: 10px 20px;
-  box-shadow: 0px 0px 10px rgb(0 0 0 / 30%);
+  box-shadow: 0px 0px 10px rgb(0 0 0 / 20%);
 
   transition: background var(--transition-time),
     border var(--transition-time) ease-in-out;
@@ -43,12 +43,6 @@
 
 .navigation__member button {
   height: 100%;
-}
-
-.navigation__active-btn {
-  background: palegreen;
-  border: none;
-  outline: 1px solid var(--border-color);
 }
 
 .theme__btn-container {
@@ -142,6 +136,7 @@
 
   background-color: var(--bg-color);
   border-top: 1px solid var(--border-color);
+  box-shadow: 0px 0px 10px rgb(0 0 0 / 20%);
   padding: 0 30px;
 
   transition: background var(--transition-time),
