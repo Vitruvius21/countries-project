@@ -1,5 +1,6 @@
 import * as theme from "./theme.js";
 import * as dataService from "./services/dataService.js";
+import { transformNumber } from "./utils/utils.js";
 
 theme.defineTheme();
 
@@ -23,6 +24,45 @@ window.onload = async function () {
 
   loaderImg.setAttribute("style", "display:none");
 
+  function createCountryElement(countryData) {
+    let countryElsArray = [];
+    let countryEl;
+
+    ["div", "img", "h4", "p", "p", "p"].forEach((tag) => {
+      countryElsArray.push(document.createElement(tag));
+    });
+
+    [
+      "country",
+      "country-flag",
+      "country-name",
+      "country-capital",
+      "country-region",
+      "country-population",
+    ].forEach((clss, i) => {
+      countryElsArray[i].classList.add(clss);
+    });
+
+    countryElsArray[0].setAttribute("title", countryData?.name?.common);
+    countryElsArray[1].setAttribute("src", countryData?.flags?.svg);
+    countryElsArray[1].setAttribute(
+      "alt",
+      "Flag of " + countryData?.name?.common
+    );
+
+    countryElsArray[2].innerHTML = countryData?.name?.common;
+    countryElsArray[3].innerHTML = countryData?.capital;
+    countryElsArray[4].innerHTML = countryData?.region;
+    countryElsArray[5].innerHTML = transformNumber(+countryData?.population);
+
+    for (let index = 1; index < countryElsArray.length; index++) {
+      countryEl = countryElsArray[0];
+      countryEl.appendChild(countryElsArray[index]);
+    }
+
+    return countryEl;
+  }
+
   function updateCountriesData(i) {
     const countries = allCountries.slice(
       (i - 1) * pagingNumber,
@@ -32,10 +72,13 @@ window.onload = async function () {
     const countriesContainer = document.querySelector(".countries");
     countriesContainer.innerHTML = "";
 
-    countries.forEach((country) => {
-      let countryDiv = document.createElement("div");
-      countryDiv.innerHTML = `<h1>${country.name.common}</h1>`;
-      countriesContainer.append(countryDiv);
+    countries.forEach((countryData, index) => {
+      const countryEl = createCountryElement(countryData);
+      countryEl.addEventListener(
+        "click",
+        navigate.bind(null, [countryEl.title])
+      );
+      countriesContainer.append(countryEl);
     });
   }
 
@@ -69,6 +112,15 @@ window.onload = async function () {
     btnsCollection[paramsDefaultPage - 1].classList.add(
       "navigation__active-btn"
     );
+  }
+
+  //* Navigation
+  function navigate(countryName) {
+    const navAddr = new URL(window.location.origin);
+    navAddr.pathname = "pages/profile.html";
+    navAddr.searchParams.set("country", countryName);
+
+    window.location.assign(navAddr);
   }
 
   window.addEventListener(
