@@ -48,9 +48,11 @@ window.onload = async function () {
       "Flag of " + countryData?.name?.common
     );
     countryElsArray[2].innerHTML = countryData?.name?.common;
-    countryElsArray[3].innerHTML = countryData?.capital;
-    countryElsArray[4].innerHTML = countryData?.region;
-    countryElsArray[5].innerHTML = transformNumber(+countryData?.population);
+    countryElsArray[3].innerHTML = `<span>Capital:</span> ${countryData?.capital}`;
+    countryElsArray[4].innerHTML = `<span>Region:</span> ${countryData?.region}`;
+    countryElsArray[5].innerHTML = `<span>Population:</span> ${transformNumber(
+      +countryData?.population
+    )}`;
 
     for (let index = 1; index < countryElsArray.length; index++) {
       countryEl = countryElsArray[0];
