@@ -106,14 +106,10 @@
   display: inline-block;
   position: relative;
   overflow: hidden;
-  cursor: pointer;
 
   -moz-box-shadow: rgba(0, 0, 0, 0.5) 2px 2px 7px inset;
   -webkit-box-shadow: rgba(0, 0, 0, 0.5) 2px 2px 7px inset;
   box-shadow: rgba(0, 0, 0, 0.5) 2px 2px 7px inset;
-  -webkit-transition: box-shadow 0.3s ease-in;
-  -moz-transition: box-shadow 0.3s ease-in;
-  transition: box-shadow 0.3s ease-in;
 }
 
 /* .shadow:hover {

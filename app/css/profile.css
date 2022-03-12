@@ -1,0 +1,15 @@
+@import "style.css";
+
+.gmap-container {
+  position: relative;
+  text-align: right;
+  height: 459px;
+  width: 756px;
+}
+
+.gmap-canvas {
+  overflow: hidden;
+  background: none !important;
+  height: 459px;
+  width: 756px;
+}
