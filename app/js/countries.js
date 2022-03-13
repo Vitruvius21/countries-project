@@ -4,13 +4,17 @@ import { transformNumber } from "./utils/utils.js";
 
 theme.defineTheme();
 
+const addr = new URL(window.location.href);
 let pagingNumber = 10;
 
 window.onload = async function () {
-  const allCountries = await dataService.getAllCountries();
+  console.log(addr.href.includes("pages/countries"));
+  let countriesData = addr.href.includes("pages/countries")
+    ? await dataService.getAllCountries()
+    : await dataService.getAllNonUnTerritories();
+  let allCountries = countriesData;
 
-  const addr = new URL(window.location.href);
-  const maxPageNumber = Math.ceil(allCountries.length / pagingNumber);
+  let maxPageNumber = calcMaxPageNumber();
   const paramsPageNumber = +addr.searchParams.get("page");
   const paramsDefaultPage =
     paramsPageNumber > 0 && paramsPageNumber <= maxPageNumber
@@ -23,6 +27,10 @@ window.onload = async function () {
   let previousPagingTarget = null;
 
   loaderImg.setAttribute("style", "display:none");
+
+  function calcMaxPageNumber() {
+    return Math.ceil(allCountries.length / pagingNumber);
+  }
 
   function createCountryElement(countryData) {
     let countryElsArray = [];
@@ -48,11 +56,15 @@ window.onload = async function () {
       "Flag of " + countryData?.name?.common
     );
     countryElsArray[2].innerHTML = countryData?.name?.common;
-    countryElsArray[3].innerHTML = `<span>Capital:</span> ${countryData?.capital}`;
-    countryElsArray[4].innerHTML = `<span>Region:</span> ${countryData?.region}`;
-    countryElsArray[5].innerHTML = `<span>Population:</span> ${transformNumber(
-      +countryData?.population
-    )}`;
+    countryElsArray[3].innerHTML = `<span>Capital:</span> ${
+      countryData?.capital.join(", ") || "N/A"
+    }`;
+    countryElsArray[4].innerHTML = `<span>Region:</span> ${
+      countryData?.region || "N/A"
+    }`;
+    countryElsArray[5].innerHTML = `<span>Population:</span> ${
+      transformNumber(+countryData?.population) || "N/A"
+    }`;
 
     for (let index = 1; index < countryElsArray.length; index++) {
       countryEl = countryElsArray[0];
@@ -87,6 +99,7 @@ window.onload = async function () {
   }
 
   function updatePaginator() {
+    // paginator.innerHTML = "";
     for (let index = 1; index <= maxPageNumber; index++) {
       const btn = document.createElement("button");
       btn.innerHTML = `${index}`;
@@ -108,7 +121,7 @@ window.onload = async function () {
     }
 
     btnsCollection = paginator.getElementsByTagName("button");
-    btnsCollection[paramsDefaultPage - 1].classList.add(
+    btnsCollection[paramsDefaultPage - 1]?.classList.add(
       "navigation__active-btn"
     );
   }
@@ -143,4 +156,47 @@ window.onload = async function () {
   updatePaginator();
   updateCountriesData(paramsDefaultPage);
   updateHrefParams(paramsDefaultPage);
+
+  //* Filters *************************************************************
+  function onFilter({ event, value, continents, countries }) {
+    const searchValue =
+      event?.target?.value.toLowerCase() || value.toLowerCase();
+
+    allCountries = countriesData.filter((country) => {
+      if (countries) {
+        return country.name.common.toLowerCase().includes(searchValue);
+      } else if (continents) {
+        let result;
+        country.continents.forEach((val) => {
+          result = val.toLowerCase().includes(searchValue);
+        });
+
+        return result;
+      }
+    });
+
+    paginator.innerHTML = "";
+    maxPageNumber = calcMaxPageNumber();
+    updatePaginator();
+    updateCountriesData(paramsDefaultPage);
+  }
+
+  const countrySearch = document.getElementById("country-search");
+  const continentSearch = document.getElementById("continent-search");
+
+  if (countrySearch.value) {
+    onFilter({ value: countrySearch.value, countries: true });
+  } else if (continentSearch.value) {
+    onFilter({ value: continentSearch.value, continents: true });
+  }
+
+  countrySearch.addEventListener("input", (event) => {
+    continentSearch.value = "";
+    onFilter({ event, countries: true });
+  });
+
+  continentSearch.addEventListener("input", (event) => {
+    countrySearch.value = "";
+    onFilter({ event, continents: true });
+  });
 };
