@@ -15,9 +15,14 @@ body {
 }
 
 .main__search {
+  padding: 0 100px;
   display: flex;
   width: 100%;
   justify-content: space-between;
+}
+
+.main__search input {
+  width: 280px;
 }
 
 .main__content {

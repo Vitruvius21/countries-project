@@ -35,7 +35,6 @@
   padding: 0 20px 20px 20px;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
 
   justify-content: center;
   align-items: center;
@@ -103,7 +102,9 @@
   padding: 10px 0;
 }
 
-.main__data-timezones {
+.main__data-timezones,
+.main__data-name-native,
+.main__data-language {
   width: 350px;
   overflow: hidden;
   text-overflow: ellipsis;

@@ -1,6 +1,6 @@
 const URL = "https://restcountries.com/v3.1";
 
-function getData({ countryName } = {}) {
+function getData({ countryName, nonUnMembers, all } = {}) {
   return new Promise(function (resolve, reject) {
     const xhttp = new XMLHttpRequest();
 
@@ -18,6 +18,14 @@ function getData({ countryName } = {}) {
               return country?.unMember;
             })[0]
           );
+        } else if (nonUnMembers) {
+          resolve(
+            JSON.parse(xhttp.response).filter((country) => {
+              return !country?.unMember;
+            })
+          );
+        } else if (all) {
+          resolve(JSON.parse(xhttp.response));
         } else {
           resolve(
             JSON.parse(xhttp.response).filter((country) => {
@@ -52,24 +60,10 @@ export function getAllCountries() {
   return getData();
 }
 
-// console.log("loadDoc called");
+export function getAllNonUnTerritories() {
+  return getData({ nonUnMembers: true });
+}
 
-// const xhttp = new XMLHttpRequest();
-// xhttp.onload = function () {
-//   // document.getElementById("demo").innerHTML = this.responseText;
-//   data = JSON.parse(this.responseText);
-
-//   console.log("xhttp called", data);
-
-//   let map = document.getElementById("gmap_canvas");
-//   console.log(data);
-//   map.setAttribute(
-//     "src",
-//     "https://maps.google.com/maps?q=" +
-//       data[0].latlng[0] +
-//       ", " +
-//       data[0].latlng[1] +
-//       `&t=&z=${calculate(data[0].area)}&ie=UTF8&iwloc=&output=embed`
-//   );
-//   src="https://maps.google.com/maps?q=usa&t=&z=5&ie=UTF8&iwloc=&output=embed"
-// };
+export function getAllCountriesAndTerritories() {
+  return getData({ all: true });
+}
