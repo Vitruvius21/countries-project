@@ -15,3 +15,13 @@ export function createDescription(country) {
     country?.area
   )} km² and a population of ${transformNumber(country?.population)} people.`;
 }
+
+export function inPluralOrSingular(word, num) {
+  if (num === 1 || num === 0) {
+    return word;
+  } else if (word.endsWith("y")) {
+    return word.slice(0, -1) + "ies";
+  } else {
+    return word + "s";
+  }
+}

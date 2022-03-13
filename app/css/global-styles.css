@@ -135,7 +135,8 @@ body.dark-theme img:not(.loader-img) {
       brightness(89%) contrast(81%);
   }
 
-  body:not(.light-theme) img:not(.loader-img) {
+  body:not(.light-theme) img:not(.loader-img),
+  body:not(.light-theme) iframe {
     filter: brightness(0.8) contrast(1.2);
   }
 }

@@ -31,5 +31,3 @@ export function loadGoogleMap(country, elementId) {
   const map = document.getElementById(elementId);
   map.setAttribute("src", mapUrl(country));
 }
-
-// src="https://maps.google.com/maps?q=usa&t=&z=5&ie=UTF8&iwloc=&output=embed"
