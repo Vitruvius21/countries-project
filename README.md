@@ -40,6 +40,7 @@ Users should be able to:
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
+- Modular JS
 - No JS libraries
 - Custom routing
 - Custom color scheme
