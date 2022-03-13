@@ -8,7 +8,6 @@ const addr = new URL(window.location.href);
 let pagingNumber = 10;
 
 window.onload = async function () {
-  console.log(addr.href.includes("pages/countries"));
   let countriesData = addr.href.includes("pages/countries")
     ? await dataService.getAllCountries()
     : await dataService.getAllNonUnTerritories();
@@ -179,14 +178,15 @@ window.onload = async function () {
     maxPageNumber = calcMaxPageNumber();
     updatePaginator();
     updateCountriesData(paramsDefaultPage);
+    updateHrefParams(1);
   }
 
   const countrySearch = document.getElementById("country-search");
   const continentSearch = document.getElementById("continent-search");
 
-  if (countrySearch.value) {
+  if (countrySearch.value.length > 0) {
     onFilter({ value: countrySearch.value, countries: true });
-  } else if (continentSearch.value) {
+  } else if (continentSearch.value.length > 0) {
     onFilter({ value: continentSearch.value, continents: true });
   }
 
