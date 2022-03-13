@@ -160,7 +160,7 @@ window.onload = async function () {
   //* Filters *************************************************************
   function onFilter({ event, value, continents, countries }) {
     const searchValue =
-      event?.target?.value.toLowerCase() || value.toLowerCase();
+      event?.target?.value.toLowerCase() || value?.toLowerCase() || "";
 
     allCountries = countriesData.filter((country) => {
       if (countries) {
