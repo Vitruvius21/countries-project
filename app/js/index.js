@@ -6,9 +6,7 @@ theme.defineTheme();
 
 window.onload = async function () {
   const allCountries = await dataService.getAllCountries();
-
   let rndCountry;
-  console.log("data", allCountries);
 
   const loaderImg = document.querySelector(".loader-img");
   const card = document.querySelector(".main__section-card");
@@ -26,8 +24,6 @@ window.onload = async function () {
   function updateCardData() {
     const rndIndex = getRndInteger({ max: allCountries.length });
     rndCountry = allCountries[rndIndex];
-
-    console.log(rndIndex);
 
     cardTitle.innerHTML = rndCountry?.name?.common;
     cardImg.src = rndCountry?.flags?.svg;

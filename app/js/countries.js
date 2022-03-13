@@ -28,19 +28,17 @@ window.onload = async function () {
     let countryElsArray = [];
     let countryEl;
 
-    ["div", "img", "h4", "p", "p", "p"].forEach((tag) => {
-      countryElsArray.push(document.createElement(tag));
-    });
-
     [
-      "country",
-      "country-flag",
-      "country-name",
-      "country-capital",
-      "country-region",
-      "country-population",
-    ].forEach((clss, i) => {
-      countryElsArray[i].classList.add(clss);
+      ["div", "country"],
+      ["img", "country-flag"],
+      ["h4", "country-name"],
+      ["p", "country-capital"],
+      ["p", "country-region"],
+      ["p", "country-population"],
+    ].forEach((val) => {
+      let countryInnerEl = document.createElement(val[0]);
+      countryInnerEl.classList.add(val[1]);
+      countryElsArray.push(countryInnerEl);
     });
 
     countryElsArray[0].setAttribute("title", countryData?.name?.common);
@@ -49,11 +47,12 @@ window.onload = async function () {
       "alt",
       "Flag of " + countryData?.name?.common
     );
-
     countryElsArray[2].innerHTML = countryData?.name?.common;
-    countryElsArray[3].innerHTML = countryData?.capital;
-    countryElsArray[4].innerHTML = countryData?.region;
-    countryElsArray[5].innerHTML = transformNumber(+countryData?.population);
+    countryElsArray[3].innerHTML = `<span>Capital:</span> ${countryData?.capital}`;
+    countryElsArray[4].innerHTML = `<span>Region:</span> ${countryData?.region}`;
+    countryElsArray[5].innerHTML = `<span>Population:</span> ${transformNumber(
+      +countryData?.population
+    )}`;
 
     for (let index = 1; index < countryElsArray.length; index++) {
       countryEl = countryElsArray[0];

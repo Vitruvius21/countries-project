@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>World Countries</title>
+    <link rel="stylesheet" href="../css/countries.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="header__h1">World Countries</h1>
+      <div class="theme__btn-container">
+        <button class="btn-toggle"></button>
+      </div>
+      <nav class="navigation">
+        <ul class="navigation__members">
+          <li class="navigation__member">
+            <a href="../index.html"
+              ><button class="navigation__btn">Home</button></a
+            >
+          </li>
+          <li class="navigation__member">
+            <a href="./countries.html"
+              ><button class="navigation__btn navigation__active-btn">
+                UN Countries
+              </button></a
+            >
+          </li>
+          <li class="navigation__member">
+            <a href="./territories.html"
+              ><button class="navigation__btn">Territories</button></a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main">
+      <div class="main__search">
+        <div>
+          <label for="country-search"></label>
+          <input
+            id="country-search"
+            type="search"
+            placeholder="Search for a country..."
+          />
+        </div>
+        <div>
+          <input
+            list="browsers"
+            name="browser"
+            placeholder="Filter by continent"
+          />
+          <datalist id="browsers">
+            <option value="Internet Explorer"></option>
+            <option value="Firefox"></option>
+            <option value="Chrome"></option>
+            <option value="Opera"></option>
+            <option value="Safari"></option>
+          </datalist>
+        </div>
+      </div>
+      <div class="main__content">
+        <div class="main__content-data">
+          <div class="countries">
+            <img
+              class="loader-img"
+              src="../assets/loader.svg"
+              alt="loader-icon"
+            />
+          </div>
+        </div>
+      </div>
+      <div id="paginator"></div>
+    </main>
+    <footer class="footer">
+      <p>Giorgi Balakhadze</p>
+      <p><span class="footer__copy-left">&copy;</span> Copyleft 2022</p>
+    </footer>
+    <script type="module" src="../js/countries.js"></script>
+  </body>
+</html>

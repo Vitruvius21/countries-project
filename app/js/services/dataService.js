@@ -1,12 +1,3 @@
-// function calculate(area) {
-//   if (area > 1_000_000) {
-//     return "3";
-//   } else if (area > 300_000) {
-//     return "5";
-//   } else {
-//     return "7";
-//   }
-// }
 const URL = "https://restcountries.com/v3.1";
 
 function getData({ countryName } = {}) {
@@ -14,18 +5,26 @@ function getData({ countryName } = {}) {
     const xhttp = new XMLHttpRequest();
 
     if (countryName) {
-      xhttp.open("GET", `${URL}/name/${countryName}`);
+      xhttp.open("GET", `${URL}/name/${countryName}?fullText=true`);
     } else {
       xhttp.open("GET", `${URL}/all`);
     }
 
     xhttp.onload = function () {
       if (this.status >= 200 && this.status < 300) {
-        resolve(
-          JSON.parse(xhttp.response).filter((country) => {
-            return country?.unMember;
-          })
-        );
+        if (countryName) {
+          resolve(
+            JSON.parse(xhttp.response).filter((country) => {
+              return country?.unMember;
+            })[0]
+          );
+        } else {
+          resolve(
+            JSON.parse(xhttp.response).filter((country) => {
+              return country?.unMember;
+            })
+          );
+        }
       } else {
         reject({
           status: this.status,
@@ -62,16 +61,15 @@ export function getAllCountries() {
 
 //   console.log("xhttp called", data);
 
-//   // let map = document.getElementById("gmap_canvas");
-//   // console.log(data);
-//   // map.setAttribute(
-//   //   "src",
-//   //   "https://maps.google.com/maps?q=" +
-//   //     data[0].latlng[0] +
-//   //     ", " +
-//   //     data[0].latlng[1] +
-//   //     `&t=&z=${calculate(data[0].area)}&ie=UTF8&iwloc=&output=embed`
-//   // );
-//   // src="https://maps.google.com/maps?q=usa&t=&z=5&ie=UTF8&iwloc=&output=embed"
+//   let map = document.getElementById("gmap_canvas");
+//   console.log(data);
+//   map.setAttribute(
+//     "src",
+//     "https://maps.google.com/maps?q=" +
+//       data[0].latlng[0] +
+//       ", " +
+//       data[0].latlng[1] +
+//       `&t=&z=${calculate(data[0].area)}&ie=UTF8&iwloc=&output=embed`
+//   );
+//   src="https://maps.google.com/maps?q=usa&t=&z=5&ie=UTF8&iwloc=&output=embed"
 // };
-// }
