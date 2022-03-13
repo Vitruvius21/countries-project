@@ -118,8 +118,6 @@ window.onload = async function () {
   }
 
   function loadProfileData(countryData) {
-    console.log(countryData);
-
     document.querySelectorAll(".with-data").forEach((el) => {
       loadFlag(el, countryData);
       loadNames(el, countryData);
