@@ -49,4 +49,4 @@ Users should be able to:
 - Storage API
 - URL API
 - JSON API
-- REST API
+- AJAX
