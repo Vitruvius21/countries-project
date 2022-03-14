@@ -56,7 +56,7 @@ window.onload = async function () {
     );
     countryElsArray[2].innerHTML = countryData?.name?.common;
     countryElsArray[3].innerHTML = `<span>Capital:</span> ${
-      countryData?.capital.join(", ") || "N/A"
+      countryData?.capital?.join(", ") || "N/A"
     }`;
     countryElsArray[4].innerHTML = `<span>Region:</span> ${
       countryData?.region || "N/A"
