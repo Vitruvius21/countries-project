@@ -1,3 +1,11 @@
+[![Commit Activity](https://img.shields.io/github/commit-activity/m/vitruvius21/countries-project?style=plastic)](https://github.com/vitruvius21/countries-project/graphs/commit-activity)
+[![Last Commit](https://img.shields.io/github/last-commit/vitruvius21/countries-project?style=plastic)](https://github.com/vitruvius21/countries-project/graphs/commit-activity)
+[![Issues](https://img.shields.io/github/issues/vitruvius21/countries-project?style=plastic)](https://github.com/vitruvius21/countries-project/issues)
+![Code Size](https://img.shields.io/github/repo-size/vitruvius21/countries-project?style=plastic)
+![Repo Size](https://img.shields.io/github/languages/code-size/vitruvius21/countries-project?style=plastic)
+![Top Language](https://img.shields.io/github/languages/top/vitruvius21/countries-project?style=plastic)
+![Languages](https://img.shields.io/github/languages/count/vitruvius21/countries-project?color=blueviolet&style=plastic)
+
 # Frontend Mentor - REST Countries API with color theme switcher solution
 
 ## Table of contents
