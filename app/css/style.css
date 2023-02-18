@@ -2,7 +2,9 @@
 
 /** PAGE HEADER START  */
 .header {
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 2;
   height: 70px;
 
   background: var(--bg-color);
@@ -91,8 +93,12 @@
 /** PAGE HEADER END */
 
 .main {
-  height: calc(100vh - 110px);
+  flex-grow: 1;
   padding: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .loader-img {
@@ -125,6 +131,9 @@
 }
 
 .footer {
+  position: sticky;
+  bottom: 0;
+
   display: flex;
   justify-content: space-between;
   align-items: center;

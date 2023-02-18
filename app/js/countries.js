@@ -1,5 +1,5 @@
-import * as theme from "./theme.js";
 import * as dataService from "./services/dataService.js";
+import * as theme from "./theme.js";
 import { transformNumber } from "./utils/utils.js";
 
 theme.defineTheme();

@@ -146,6 +146,11 @@ body.dark-theme img:not(.loader-img) {
 }
 
 body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
   background: var(--bg-color-lighter);
   transition: background var(--transition-time) ease-in-out;
 }

@@ -2,6 +2,8 @@
 
 .main {
   display: flex;
+  align-items: unset;
+  justify-content: unset;
   flex-direction: column;
 }
 
@@ -31,7 +33,7 @@
 }
 
 .main__data {
-  height: 100%;
+  flex-grow: 1;
   padding: 0 20px 20px 20px;
   display: flex;
   flex-direction: column;
@@ -46,33 +48,32 @@
   align-items: center;
 }
 
-.country-flag {
+.country-flag,
+.gmap-container {
   flex: 0 0 40%;
-  width: 500px;
-  height: 400px;
 
   display: flex;
   justify-content: center;
 }
 
 .country-flag-img {
-  height: 100%;
+  height: auto;
+  max-width: 100%;
   object-fit: contain;
+
   border: 1px solid var(--border-color);
   transition: border var(--transition-time) ease-in-out;
 }
 
 .gmap-container {
-  flex: 0 0 40%;
   display: inline-block;
-  height: 500px;
-  width: 700px;
-
-  display: flex;
-  justify-content: center;
 }
 
 .gmap-canvas {
+  height: auto;
+  max-width: 100%;
+  aspect-ratio: 1.4/1;
+
   border-style: solid;
   border-color: var(--border-color);
   transition: border var(--transition-time) ease-in-out;
